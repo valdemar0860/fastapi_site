@@ -8,6 +8,6 @@ class BaseUser(BaseModel):
     password: str
     
     
-class User(BaseUser):
+class CreateUser(BaseUser):
     id: int
     registered_at: datetime

@@ -7,6 +7,11 @@ from core.models.db_helper import db_helper
 router = APIRouter(prefix='/users')
 
 
+@router.get('/get_users')
+async def get_users(session: AsyncSession = Depends(db_helper.get_scoped_session)):
+    return await crud.get_users(session=session)
+
+
 @router.get('/get_user/')
 async def get_user(
         user_id: int,
